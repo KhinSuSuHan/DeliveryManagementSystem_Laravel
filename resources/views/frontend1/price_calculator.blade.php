@@ -5,7 +5,7 @@
  <!DOCTYPE html>
  <html>
  <head>
-   <title>Schedule Order</title>
+   <title>Price Calculator</title>
    <style>  
     #orderform{
       margin-left: 25%;
@@ -23,8 +23,8 @@
 <body>
  <div class="row justify-content-center mb-5">
   <div class="col-md-7 text-center border-primary">
-    <h2 class="font-weight-light text-primary">Schedule Order</h2>
-    <p class="color-black-opacity-5">You can schedule your order here!</p>
+    <h2 class="font-weight-light text-primary">Price Calculator</h2>
+    <p class="color-black-opacity-5">You can calculate here for the charges before you order!</p>
   </div>
 </div>
 
@@ -38,40 +38,11 @@
 </div>
 @endif
 
-<form method="post" id="orderform" action="{{route('scheduleorder.store')}}">  
+<form id="orderform">
   @csrf
   <div class="form-group">
     <div class="panel-body">
       <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">  
-            <label for="inputUserid">User Name</label>
-            <input type="text" class="form-control" name="inputUserid" id="inputUserid">  {{-- #f89d13 --}}
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="inputPhoneno">Phone No</label><br>
-            <input id="telNo" name="inputPhoneno" type="text"
-            placeholder="09-xxxx xxxxx">
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <textarea class="form-control" name="inputAddress" id="inputAddress"></textarea>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="inputDate">Date</label><br>
-            <input type="date" id="start" name="inputDate"
-            value="2020-10-10">
-          </div>
-        </div>
 
         <div class="col-md-6">
           <div class="form-group">
@@ -98,7 +69,6 @@
             </select>
           </div>
         </div>
-
 
         {{-- Need to test condition--}}
 
@@ -140,7 +110,7 @@
 
       <div class="col-md-6">
         <div class="form-group">
-          <label for="inputTotal">Total</label>
+          <label for="inputTotal">Total is: </label>
           <input type="text" class="form-control" name="inputTotal" id="inputTotal" readonly>
         </div>
       </div>
@@ -150,7 +120,7 @@
 </div>
 
 <div class="wrapper" align="center">
-  <button type="submit" class="btn btn-primary">Schedule Order</button>
+  <button type="submit" class="btn btn-primary" id="btnCal">Calculate</button>
 </div>
 
 </form><br><br>
@@ -159,11 +129,12 @@
 @endsection
 
 
-
-
-
-
-
-
-
-
+@section('script')
+<script type="text/javascript">
+$('.row').each(function(){
+  var quantity = parseInt( $(this).find('[name="units[]"]').val(),10)
+  var price = parseInt( $(this).find('[name="unit_price[]"]').val(),10)
+  total += quantity * price;
+});
+</script>
+@endsection

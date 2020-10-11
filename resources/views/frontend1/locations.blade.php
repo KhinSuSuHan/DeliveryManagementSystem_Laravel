@@ -2,44 +2,55 @@
 @extends('frontend1template')
 @section('content')
 
-
- <div class="row justify-content-center mb-5">
-  <div class="col-md-7 text-center border-primary">
-    <h2 class="font-weight-light text-primary">Location List</h2>
-    <p class="color-black-opacity-5">Here are township we deliver now!</p>
-     <p class="color-black-opacity-5">Check the price!</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Locations List</title>
+  <style>    
+    .table, th, td {    
+      border: 2px solid #f89d13;  
+      margin-left: auto;  
+      margin-right: auto;  
+      border-collapse: collapse;    
+      width: 800px;  
+      text-align: center;  
+      font-size: 17px; 
+    }   
+  </style> 
+</head>
+<body>
+  <div class="row justify-content-center mb-5">
+    <div class="col-md-7 text-center border-primary">
+      <h2 class="font-weight-light text-primary">Location List</h2>
+      <p class="color-black-opacity-5">Here are townships we deliver now!</p>
+      <p class="color-black-opacity-5">Check the price!</p>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
- 
- 
-  {{-- Table --}}
-  <table class="table my-3">
-  	
-    <thead>
-      <tr>
-        <th>No</th>
-        <th>Name</th>
-        <th>Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach($locations as $row)
+  <div class="row">
+    {{-- Table --}}
+    <table class="table my-3">
+      <thead>
         <tr>
-          <td>{{$row->id}}</td>
-          <td>{{$row->name}}</td>
-          <td>{{$row->price}}</td>
+          <th>No</th>
+          <th>Name</th>
+          <th>Price</th>
         </tr>
-      @endforeach
-    </tbody>
-  </table>
-</div>
-</div>
-<div class="container" align="center">
- {{ $locations ->links() }}
- </div>
-
-@endsection
+      </thead>
+      <tbody>
+        @foreach($locations as $row)
+        <tr>
+          <td><b>{{$row->id}}</b></td>
+          <td><b>{{$row->name}}</b></td>
+          <td><b>{{$row->price}}</b></td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>
+    <div class="col-md-6 offset-md-5">
+     {{ $locations ->links() }}
+   </div>
+ </body>
+ </html>
+ @endsection
 
 

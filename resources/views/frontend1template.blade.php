@@ -59,7 +59,7 @@
                   </ul>
                 </li>
                 <li><a href="{{route('list')}}">Locations</a></li>
-                <li><a href="#">Price Calculator</a></li>
+                <li><a href="{{route('pricecalculator')}}">Price Calculator</a></li>
                 <li><a href="{{route('order')}}">Schdeule Order</a></li>
                 <li><a href="#">Guide</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -103,23 +103,23 @@
             <span class="icon-dollar"></span>
           </div>
           <h2 class="my-4 heading">Best Prices</h2>
-         <!--  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ipsum odio minima tempora animi iure.</p> -->
+           <span class="icon-dollar"> 2000-2500 MMK</span>
         </div>
       </div>
       <div class="col-md-4">
         <div class="free-quote bg-dark h-100">
-          <h2 class="my-4 heading  text-center">Get Free Quote</h2>
+          <h2 class="my-4 heading  text-center">Check your Order?</h2>
           <form method="post">
             <div class="form-group">
               <label for="fq_name">Name</label>
               <input type="text" class="form-control btn-block" id="fq_name" name="fq_name" placeholder="Enter Name">
             </div>
             <div class="form-group mb-4">
-              <label for="fq_email">Email</label>
-              <input type="text" class="form-control btn-block" id="fq_email" name="fq_email" placeholder="Enter Email">
+              <label for="fq_email">Order ID</label>
+              <input type="text" class="form-control btn-block" id="fq_email" name="fq_email" placeholder="Enter Order ID">
             </div>
             <div class="form-group">
-              <input type="submit" class="btn btn-primary text-white py-2 px-4 btn-block" value="Get Quote">  
+              <input type="submit" class="btn btn-primary text-white py-2 px-4 btn-block" value="Check My Order">  
             </div>
           </form>
         </div>
@@ -130,7 +130,7 @@
             <span class="icon-phone"></span>
           </div>
           <h2 class="my-4 heading">24/7 Support</h2>
-         <!--  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ipsum odio minima tempora animi iure.</p> -->
+          <p>Call Center: 09-421128653,54,55</p>
         </div>
       </div>
     </div>
@@ -186,73 +186,17 @@
   </div>
 
   <footer class="site-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-9">
-          <div class="row">
-            <div class="col-md-3">
-              <h2 class="footer-heading mb-4">Quick Links</h2>
-              <ul class="list-unstyled">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Testimonials</a></li>
-                <li><a href="#">Contact Us</a></li>
-              </ul>
-            </div>
-            <div class="col-md-3">
-              <h2 class="footer-heading mb-4">Products</h2>
-              <ul class="list-unstyled">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Testimonials</a></li>
-                <li><a href="#">Contact Us</a></li>
-              </ul>
-            </div>
-            <div class="col-md-3">
-              <h2 class="footer-heading mb-4">Features</h2>
-              <ul class="list-unstyled">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Testimonials</a></li>
-                <li><a href="#">Contact Us</a></li>
-              </ul>
-            </div>
-            <div class="col-md-3">
-              <h2 class="footer-heading mb-4">Follow Us</h2>
-              <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <h2 class="footer-heading mb-4">Subscribe Newsletter</h2>
-          <form action="#" method="post">
-            <div class="input-group mb-3">
-              <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary text-white" type="button" id="button-addon2">Send</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
+   
       <div class="row pt-5 mt-5 text-center">
-        <div class="col-md-12">
-          <div class="border-top pt-5">
-            <p>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        <div class="col-md-12"> 
+            <p> 
               Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
-          </div>
-        </div>
 
       </div>
     </div>
   </footer>
-</div>
+<!-- </div> -->
 
 <script src="{{ asset ('frontend1/js/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ asset ('frontend1/js/jquery-migrate-3.0.1.min.js') }}"></script>

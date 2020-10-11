@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(TypeTableSeeder::class);
         $this->call(WeightTableSeeder::class);
+        $this->call(ExpressSeeder::class);
     }
 }

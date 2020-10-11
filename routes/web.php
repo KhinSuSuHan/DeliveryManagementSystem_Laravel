@@ -28,9 +28,13 @@ Route::get('/f1', function () {
 
 Route::resource('locations','LocationController');
 Route::resource('boxes','BoxController');
+Route::resource('express','ExpressController');
+Route::resource('scheduleorder','ScheduleorderController');
 
 Route::get('/order', 'FrontendController@order')->name('order');
 Route::get('/list', 'FrontendController@locations')->name('list');
+Route::get('/scheduleorder', 'FrontendController@scheduleorder')->name('scheduleorder');
+Route::get('/pricecalculator', 'FrontendController@pricecalculator')->name('pricecalculator');
 
 
 Route::get('/orderform', 'FrontendController@orderform')->name('orderform');
