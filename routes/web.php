@@ -33,6 +33,7 @@ Route::resource('scheduleorder','ScheduleorderController');
 
 Route::get('/order', 'FrontendController@order')->name('order');
 Route::get('/list', 'FrontendController@locations')->name('list');
+Route::get('/contact', 'FrontendController@contact')->name('contact');
 Route::get('/scheduleorder', 'FrontendController@scheduleorder')->name('scheduleorder');
 Route::get('/pricecalculator', 'FrontendController@pricecalculator')->name('pricecalculator');
 

@@ -12,8 +12,12 @@ class FrontendController extends Controller
 {
  public function index()
  {
-  
    return view('frontend1.index',compact(''));
+ }
+
+ public function contact()
+ {  
+   return view('frontend1.contact');   
  }
 
  public function order()
@@ -59,24 +63,18 @@ class FrontendController extends Controller
 
  public function locations()
  {
-   $locations = Location::paginate(5);
-   
-   return view('frontend1.locations', compact('locations'));
-   
+   $locations = Location::paginate(10);   
+   return view('frontend1.locations', compact('locations'));   
  }
 
-  public function pricecalculator()
+ public function pricecalculator()
  {
    $locations = Location::all();
    $types = Type::all();
    $boxes = Box::all();
    $expresses = Express::all();
-   return view('frontend1.price_calculator',compact('locations','types','boxes', 'expresses'));
-  
-   
- }
-
- 
+   return view('frontend1.price_calculator',compact('locations','types','boxes', 'expresses'));  
+ } 
 }
 
 

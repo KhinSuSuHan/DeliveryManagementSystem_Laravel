@@ -13,10 +13,10 @@
       width: 50%;
     }
 
-  :checked {
-  margin-left: 25px;
-  border: 3px solid #f89d13;
-}
+    :checked {
+      margin-left: 25px;
+      border: 3px solid #f89d13;
+    }
 
   </style> 
 </head>
@@ -60,7 +60,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="InputTypeid">Type</label>
-            <select class="form-control" name="inputTypeid">
+            <select class="form-control" name="inputTypeid" id="inputTypeid">
               @foreach($types as $row)
               <option value="{{$row->id}}">
                 {{$row->name}}
@@ -76,7 +76,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="InputWeightid">Weight</label>
-            <select class="form-control" name="InputWeightid">
+            <select class="form-control" name="InputWeightid" id="InputWeightid">
               @foreach($expresses as $row)
               <option value="{{$row->id}}">
                 {{$row->weight}}
@@ -90,7 +90,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="InputSizeid">Size</label>
-            <select class="form-control" name="InputSizeid">
+            <select class="form-control" name="InputSizeid" id="InputSizeid">
               @foreach($boxes as $row)
               <option value="{{$row->id}}">
                 {{$row->size}}
@@ -105,23 +105,23 @@
          <div class="form-group">
           <input type="checkbox" name="inputCheckbox" class="checkbox" id="opt-in">
           <label for="opt-in"><i>Check if your Percel is more than 3 <b>(Extra 2000 Charges)<b>!</i></label>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="inputTotal">Total is: </label>
-          <input type="text" class="form-control" name="inputTotal" id="inputTotal" readonly>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="inputTotal">Total is: </label>
+            <input type="text" class="form-control" name="inputTotal" id="inputTotal" readonly>
+          </div>
         </div>
-      </div>
 
-    </div> 
+      </div> 
+    </div>
   </div>
-</div>
 
-<div class="wrapper" align="center">
-  <button type="submit" class="btn btn-primary" id="btnCal">Calculate</button>
-</div>
+  <div class="wrapper" align="center">
+    <button type="submit" class="btn btn-primary" id="btnCal">Calculate</button>
+  </div>
 
 </form><br><br>
 </body>
@@ -131,10 +131,39 @@
 
 @section('script')
 <script type="text/javascript">
-$('.row').each(function(){
-  var quantity = parseInt( $(this).find('[name="units[]"]').val(),10)
-  var price = parseInt( $(this).find('[name="unit_price[]"]').val(),10)
-  total += quantity * price;
+
+  $('#inputTypeid').change(function () {
+    if ($(this).find('option:selected').text() = 'express') {
+        $('#InputWeightid').prop('disabled', false);
+    } else {
+        $('#InputWeightid').prop('disabled', true)
+    }
 });
+
+  $('#inputTypeid').change(function () {
+    if ($(this).find('option:selected').text() = 'box') {
+        $('#InputSizeid').prop('disabled', false);
+    } else {
+        $('#InputSizeid').prop('disabled', true)
+    }
+});
+
+ {{--  $('#btnCal').focus(function (argument) {
+    var location_price = parseInt($('.location_price').val());
+    var weight_price = parseInt($('.weight_price').val());
+    var size_price = parseInt($('.size_price').val());
+    var extra_charges = parseInt($('.extra_charges').val());
+
+    var total1 = location_price+weight_price;
+
+    var total2 = location_price+weight_price+extra_charges;
+
+    var total3 = location_price+size_price;
+
+    var total4 = location_price+size_price+extra_charges;
+
+    /*$(this).val(total);*/
+  }) --}}
+ 
 </script>
-@endsection
+@endsection 
