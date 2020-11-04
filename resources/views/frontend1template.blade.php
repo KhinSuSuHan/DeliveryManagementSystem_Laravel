@@ -52,7 +52,7 @@
                 <li><a href="{{route('list')}}">Locations</a></li>
                 <li><a href="{{route('pricecalculator')}}">Price Calculator</a></li>
                 <li><a href="{{route('order')}}">Schdeule Order</a></li>
-                <li><a href="#">Guide</a></li>
+               <!--  <li><a href="#">Guide</a></li> -->
                 <li><a href="{{route('contact')}}">Contact</a></li>
               </ul>
             </nav>
